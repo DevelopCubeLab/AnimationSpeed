@@ -1,0 +1,9 @@
+Package: com.developlab.animationspeed
+Name: Animation Speed
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Change UI Animation Speed
+Maintainer: developlab
+Author: developlab
+Section: Utilities
+Depends: firmware (>= 12.2) | ${LIBSWIFT}
