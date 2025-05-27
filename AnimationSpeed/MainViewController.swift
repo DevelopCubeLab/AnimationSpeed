@@ -2,7 +2,7 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let versionCode = "1.0"
+    let versionCode = "1.0.1"
     
     private var tableView = UITableView()
     
@@ -162,12 +162,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 
                 if let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)), let textField = cell.contentView.viewWithTag(1) as? UITextField {
-                    NSLog("Speed -----> find cell")
-//                    let inputText = textField.text ?? ""
-//                    guard let newValue = Double(inputText) else {
-//                        showTextAlert(title: NSLocalizedString("InvalidInput", comment: ""), message: NSLocalizedString("InputValidValue", comment: ""))
-//                        return
-//                    }
                     
                     let inputText = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                     textField.resignFirstResponder() // 关闭键盘
@@ -176,7 +170,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     formatter.locale = Locale.current
                     formatter.numberStyle = .decimal
 
-                    guard let newValue = formatter.number(from: inputText)?.doubleValue else {
+                    guard let newValue = formatter.number(from: inputText)?.doubleValue, newValue >= 0.0, newValue <= 10.0 else {
                         showTextAlert(title: NSLocalizedString("InvalidInput", comment: ""), message: NSLocalizedString("InputValidValue", comment: ""))
                         return
                     }

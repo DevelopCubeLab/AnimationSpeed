@@ -1,6 +1,6 @@
 Package: com.developlab.animationspeed
 Name: Animation Speed
-Version: 1.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Change UI Animation Speed
 Maintainer: developlab
